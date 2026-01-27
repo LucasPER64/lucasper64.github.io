@@ -8,12 +8,12 @@ const formations = [
     city: "Assat",
     status: "En cours",
     bullets: [
-      "Reseaux (adressage IPV4, VLAN, DHCP, routage)",
-      "Systemes (Windows/Windows Server/Linux)",
-      "Cybersecurite (Organismes et ISO)",
-      "Projet de fin d annee realise en entreprise"
+      "Réseaux (adressage IPV4, VLAN, DHCP, routage)",
+      "Systèmes (Windows/Windows Server/Linux)",
+      "Cybersécurité (Organismes et ISO)",
+      "Projet de fin d'année réalise en entreprise"
     ],
-    skills: ["Cybersecurite (bases)", "Documentation", "Réseau", "Support", "Systèmes"]
+    skills: ["Cybersécurité", "Documentation", "Réseau", "Support", "Systèmes"]
   },
   {
     id: "bac",
@@ -24,7 +24,7 @@ const formations = [
     city: "Saint-Jean-Pied-de-Port",
     status: "Obtenu",
     bullets: [
-      "Enseignements generaux et specialites (HGGSP-SES)",
+      "Enseignements généraux et specialités (HGGSP-SES)",
       "Grand Oral"
     ],
     skills: ["Autonomie", "Organisation", "Rigueur", "Travail en groupe"]

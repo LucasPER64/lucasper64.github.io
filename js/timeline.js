@@ -13,7 +13,7 @@ const experiences = [
       "Mise en place et maintenance de solutions de sauvegarde sécurisées (exportation de machines virtuelles, de données)",
       "Assistance aux utilisateurs"
     ],
-    skills: ["Realtion client", "Windows", "Linux", "Réseau (bases)", "Sauvegardes", "Support utilisateurs", "Maintenance PC"]
+    skills: ["Relation client", "Windows", "Linux", "Réseau", "Sauvegardes", "Support utilisateurs", "Maintenance PC"]
   },
   {
     id: "leclerc-2024",
