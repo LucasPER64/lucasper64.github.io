@@ -11,7 +11,7 @@ const formations = [
       "Réseaux (adressage IPV4, VLAN, DHCP, routage)",
       "Systèmes (Windows/Windows Server/Linux)",
       "Cybersécurité (Organismes et ISO)",
-      "Projet de fin d'année réalise en entreprise"
+      "Projet de fin d'année réalisé en entreprise"
     ],
     skills: ["Cybersécurité", "Documentation", "Réseau", "Support", "Systèmes"]
   },
@@ -56,7 +56,6 @@ function buildFormationList() {
     `;
 
     btn.addEventListener("click", (e) => {
-      // evite les effets de bord avec le deselect global
       e.stopPropagation();
       selectFormation(f.id);
     });
@@ -125,11 +124,9 @@ function selectFormation(id) {
 document.addEventListener("DOMContentLoaded", () => {
   buildFormationList();
 
-  // clic PARTOUT (meme fond bleu fonce) = deselection
   document.addEventListener("click", (e) => {
-    // si on clique sur une formation (ou un enfant), on ne reset pas
-    if (e.target.closest(".edu-item")) return;
+    if (e.target.closest("#eduGrid")) return;
 
     clearFormationSelection();
-  }, true); // capture = ultra fiable
+  }, true);
 });

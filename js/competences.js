@@ -98,7 +98,6 @@ function buildSkills() {
     const card = document.createElement("div");
     card.className = "card skill-card";
 
-    // tri : expert -> moyen -> bases, et les strings (soft skills) vont a la fin
     const tagsSorted = [...(g.tags || [])].sort((a, b) => {
       const la = (typeof a === "string") ? "" : (a.level || "bases").toLowerCase();
       const lb = (typeof b === "string") ? "" : (b.level || "bases").toLowerCase();
@@ -111,7 +110,6 @@ function buildSkills() {
 
     const tagsHtml = tagsSorted.map(t => {
 
-      // ----- soft skill : string -> pas de badge -----
       if (typeof t === "string") {
         return `
           <span class="tag" data-skill="${t}" data-tooltip="${t}">
@@ -120,11 +118,9 @@ function buildSkills() {
         `;
       }
 
-      // ----- technique : objet -> badge -----
       const label = t.label || "";
       let level = (t.level || "bases").toLowerCase();
 
-      // normalisation avance / avancé
       if (level === "avancé") level = "avance";
       const data = `${label} ${level}`;
 
@@ -193,7 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== Tooltip global (au-dessus de tout) =====
   const tip = document.createElement("div");
   tip.className = "skill-tooltip";
   document.body.appendChild(tip);
@@ -205,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function showTip(text, rect) {
     tip.textContent = text;
 
-    // afficher pour mesurer sa taille
     tip.style.display = "block";
     tip.style.left = "0px";
     tip.style.top = "0px";
@@ -213,19 +207,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const margin = 10;
     const padding = 12;
 
-    // par defaut : en dessous
     let x = rect.left;
     let y = rect.bottom + margin;
 
-    // recalcul apres rendu
     const tipRect = tip.getBoundingClientRect();
 
-    // garder dans l ecran (horizontal)
     const maxX = window.innerWidth - tipRect.width - padding;
     if (x > maxX) x = maxX;
     if (x < padding) x = padding;
 
-    // si trop bas : afficher au-dessus
     if (y + tipRect.height + padding > window.innerHeight) {
       y = rect.top - tipRect.height - margin;
     }

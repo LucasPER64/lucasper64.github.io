@@ -30,11 +30,11 @@ const experiences = [
     id: "leclerc-2023",
     start: "2023-06",
     end: "2023-09",
-    title: "Employé de mise en rayon / Hote de caisse",
+    title: "Employé de mise en rayon / Hôte de caisse",
     company: "E.Leclerc",
     city: "Sauveterre-de-Bearn",
     dateLabel: "juin 2023 - sept. 2023",
-    missions: ["Hote de caisse", "Mise en rayon"],
+    missions: ["Hôte de caisse", "Mise en rayon"],
     skills: ["Relation client", "Autonomie", "Organisation", "Travail en équipe"]
   },
   {
@@ -79,12 +79,10 @@ function createItem(exp) {
   item.dataset.id = exp.id;
   item.setAttribute("aria-label", `${exp.title} - ${exp.company} (${exp.city})`);
   item.addEventListener("click", (e) => {
-    // evite que le clic bubble et reset par le handler global
     e.stopPropagation();
     selectExperience(exp.id);
   });
 
-  // alternance haut/bas
   const isUp = (exp.id.length % 2 === 0);
   item.dataset.side = isUp ? "up" : "down";
 
@@ -121,12 +119,10 @@ function buildTimeline() {
 
   el.style.width = `${totalMonths * pxPerMonth + 140}px`;
 
-  // Axe central
   const axis = document.createElement("div");
   axis.className = "tl-axis";
   el.appendChild(axis);
 
-  // Annees
   const minYear = Math.floor(minM / 12);
   const maxYear = Math.floor(maxM / 12);
 
@@ -146,7 +142,6 @@ function buildTimeline() {
     el.appendChild(tick);
   }
 
-  // Items
   const sorted = [...experiences].sort((a, b) => ymToIndex(b.start) - ymToIndex(a.start));
 
   sorted.forEach(exp => {
@@ -165,7 +160,6 @@ function buildTimeline() {
     el.appendChild(item);
   });
 
-  // Etat initial : rien selectionne
   clearSelection();
 }
 
@@ -275,25 +269,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let dragged = false;
 
-  // detecte un drag dans la frise
   wrap.addEventListener("mousemove", () => {
     if (wrap.classList.contains("dragging")) dragged = true;
   });
 
-  // reset flag apres relachement
   window.addEventListener("mouseup", () => {
     setTimeout(() => { dragged = false; }, 0);
   });
 
-  // clic PARTOUT (y compris les cotes de l ecran) = deselection
   document.addEventListener("click", (e) => {
-    // si drag, on ne deselectionne pas
     if (dragged) return;
 
-    // si clic sur un item (ou un enfant), on ne reset pas
-    if (e.target.closest(".tl-item")) return;
+    if (e.target.closest(".timeline-wrap") || e.target.closest(".details")) return;
 
-    // sinon on reset
     clearSelection();
-  }, true); // capture = ultra fiable
+  }, true);
 });

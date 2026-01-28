@@ -1,6 +1,5 @@
-// contact.js
 document.addEventListener("DOMContentLoaded", function () {
-  // Protection anti bots simple (retarde l affichage)
+  
   const emailLink = document.querySelector('a[href^="mailto:"]');
   if (emailLink) {
     const email = emailLink.getAttribute("href");
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 800);
   }
 
-  // Copier email au clic
   document.querySelectorAll(".tag").forEach(function (tag) {
     const badge = tag.querySelector(".tag-badge a");
     if (!badge) return;
