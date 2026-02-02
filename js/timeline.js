@@ -6,7 +6,7 @@ const experiences = [
     title: "Alternance BTS CIEL",
     company: "Teknico",
     city: "Uhart-Cize",
-    dateLabel: "aout 2024 - aout 2026",
+    dateLabel: "août 2024 - août 2026",
     missions: [
       "Dépannage informatique (postes utilisateurs, pannes matérielles, diagnostics logiciels)",
       "Assemblage de postes",
@@ -22,7 +22,7 @@ const experiences = [
     title: "Employé de mise en rayon",
     company: "E.Leclerc",
     city: "Aicirits-Camou-Suhast",
-    dateLabel: "juin 2024 - aout 2024",
+    dateLabel: "juin 2024 - août 2024",
     missions: ["Employé de libre service (rayon liquide)"],
     skills: ["Rigueur", "Autonomie", "Organisation", "Travail en équipe"]
   },
@@ -44,7 +44,7 @@ const experiences = [
     title: "Employé saisonnier",
     company: "Castreur de mais",
     city: "St-Julien-en-Born",
-    dateLabel: "aout 2021",
+    dateLabel: "août 2021",
     missions: ["Travail saisonnier"],
     skills: ["Autonomie", "Rigueur"]
   },
@@ -55,7 +55,7 @@ const experiences = [
     title: "Employé saisonnier",
     company: "Castreur de mais",
     city: "Luxe Sumberraute",
-    dateLabel: "aout 2019",
+    dateLabel: "août 2019",
     missions: ["Travail saisonnier"],
     skills: ["Autonomie", "Rigueur"]
   }
