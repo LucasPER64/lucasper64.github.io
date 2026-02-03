@@ -3,7 +3,7 @@ const formations = [
     id: "bts-ciel",
     yearStart: 2024,
     yearEnd: 2026,
-    title: "BTS CIEL - Option Réseaux",
+    title: "BTS CIEL - Option Réseau",
     school: "CFAI Adour",
     city: "Assat",
     status: "En cours",
