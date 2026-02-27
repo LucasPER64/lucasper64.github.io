@@ -68,7 +68,7 @@ const skillGroups = [
   }
 ];
 
-const LEVEL_ORDER = { opérationel: 0, avance: 0, moyen: 1, bases: 2 };
+const LEVEL_ORDER = { operationnel: 0, avance: 0, moyen: 1, bases: 2 };
 
 
 function normalize(s) {
@@ -252,5 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", hideTip, true);
   window.addEventListener("resize", hideTip);
 });
+
 
 
