@@ -9,7 +9,7 @@ const skillGroups = [
       { label: "Routage", level: "operationnel" },
       { label: "LAN / WAN", level: "moyen" },
       { label: "Cisco Packet Tracer", level: "moyen" },
-      { label: "Dépannage reseau", level: "opérationnel" }
+      { label: "Dépannage reseau", level: "operationnel" }
     ]
   },
   {
@@ -253,5 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", hideTip, true);
   window.addEventListener("resize", hideTip);
 });
+
 
 
