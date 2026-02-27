@@ -8,12 +8,13 @@ const formations = [
     city: "Assat",
     status: "En cours",
     bullets: [
-      "Réseaux (adressage IPV4, VLAN, DHCP, routage)",
+      "Réseau (adressage IPV4, VLAN, DHCP, routage)",
+      "Développement (C, C++, JS, HTML, CSS, SQL)",
       "Systèmes (Windows/Windows Server/Linux)",
       "Cybersécurité (Organismes et ISO)",
       "Projet de fin d'année réalisé en entreprise"
     ],
-    skills: ["Cybersécurité", "Documentation", "Réseau", "Support", "Systèmes"]
+    skills: ["Cybersécurité", "Travail en groupe", "Développement", "Documentation", "Réseau", "Support", "Systèmes"]
   },
   {
     id: "bac",
