@@ -1,75 +1,75 @@
 const skillGroups = [
   {
-    title: "Réseau",
-    desc: "Bases réseau et mise en oeuvre",
+    title: "Reseau",
+    desc: "Mise en oeuvre et bases solides",
     tags: [
       { label: "IPv4", level: "moyen" },
-      { label: "DHCP", level: "bases" },
-      { label: "VLAN", level: "bases" },
-      { label: "Routage", level: "bases" },
-      { label: "LAN / WAN", level: "bases" },
+      { label: "DHCP", level: "operationnel" },
+      { label: "VLAN", level: "operationnel" },
+      { label: "Routage", level: "operationnel" },
+      { label: "LAN / WAN", level: "moyen" },
       { label: "Cisco Packet Tracer", level: "moyen" },
-      { label: "Dépannage réseau", level: "bases" }
+      { label: "Depannage reseau", level: "operationnel" }
     ]
   },
   {
-    title: "Systèmes",
+    title: "Systemes",
     desc: "Administration et utilisation",
     tags: [
       { label: "Windows", level: "moyen" },
       { label: "Windows Server", level: "moyen" },
       { label: "Linux", level: "moyen" },
       { label: "Comptes / droits", level: "bases" },
-      { label: "Installation postes", level: "opérationel" },
-      { label: "Diagnostic (matériel/logiciel)", level: "moyen" }
+      { label: "Installation postes", level: "operationnel" },
+      { label: "Diagnostic (materiel/logiciel)", level: "moyen" }
     ]
   },
   {
     title: "Sauvegardes",
-    desc: "Protection des données et bonnes pratiques",
+    desc: "Protection des donnees et bonnes pratiques",
     tags: [
-      { label: "Stratégies de sauvegarde", level: "moyen" },
+      { label: "Strategies de sauvegarde", level: "moyen" },
       { label: "Rotation / conservation", level: "moyen" },
       { label: "Export / copie vers NAS", level: "moyen" },
-      { label: "Vérification / tests", level: "expert" },
-      { label: "Sensibilisation", level: "expert" }
+      { label: "Verification / tests", level: "operationnel" },
+      { label: "Sensibilisation", level: "operationnel" }
     ]
   },
   {
     title: "Support et terrain",
     desc: "Relation client et interventions",
     tags: [
-      { label: "Support utilisateurs", level: "expert" },
+      { label: "Support utilisateurs", level: "operationnel" },
       { label: "Prise en charge incidents", level: "moyen" },
       "Relation client",
       "Rigueur",
       "Autonomie",
-      "Travail en équipe"
+      "Travail en equipe"
     ]
   },
   {
-    title: "Cybersécurité",
+    title: "Cybersecurite",
     desc: "Notions et sensibilisation",
     tags: [
       { label: "Bonnes pratiques", level: "moyen" },
       { label: "Principes ISO", level: "bases" },
       { label: "Risques", level: "moyen" },
-      { label: "Documentation procédures", level: "moyen" },
-      { label: "Sensibilisation", level: "moyen"}
+      { label: "Documentation procedures", level: "moyen" },
+      { label: "Sensibilisation", level: "moyen" }
     ]
   },
   {
     title: "Langues",
-    desc: "Langues utilisées dans un contexte professionnel",
+    desc: "Langues utilisees dans un contexte professionnel",
     tags: [
-      { label: "Anglais (B1/B2)", level: "Avancé" },
-      {label: "Lecture / Rédaction de procédures en anglais", level: "Avancé"}
+      { label: "Anglais (B1/B2)", level: "avance" },
+      { label: "Lecture / Redaction de procedures en anglais", level: "avance" }
     ]
   }
 ];
 
+// Ordre d'affichage: operationnel/avance en premier, puis moyen, puis bases
 const LEVEL_ORDER = { operationnel: 0, avance: 0, moyen: 1, bases: 2 };
-
 
 function normalize(s) {
   return (s || "")
@@ -109,7 +109,6 @@ function buildSkills() {
     });
 
     const tagsHtml = tagsSorted.map(t => {
-
       if (typeof t === "string") {
         return `
           <span class="tag" data-skill="${t}" data-tooltip="${t}">
@@ -121,13 +120,15 @@ function buildSkills() {
       const label = t.label || "";
       let level = (t.level || "bases").toLowerCase();
 
+      // Compat: si jamais tu as encore "avancé" quelque part
       if (level === "avancé") level = "avance";
+
       const data = `${label} ${level}`;
 
       return `
         <span class="tag level-${level}" data-skill="${data}" data-tooltip="${label}">
           <span class="tag-text">${label}</span>
-          <span class="tag-badge">${level === "avance" ? "Avancé" : level}</span>
+          <span class="tag-badge">${level === "avance" ? "Avance" : (level === "operationnel" ? "Operationnel" : level)}</span>
         </span>
       `;
     }).join("");
@@ -252,6 +253,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", hideTip, true);
   window.addEventListener("resize", hideTip);
 });
-
-
-
