@@ -9,7 +9,7 @@ const skillGroups = [
       { label: "Routage", level: "operationnel" },
       { label: "LAN / WAN", level: "moyen" },
       { label: "Cisco Packet Tracer", level: "moyen" },
-      { label: "Depannage reseau", level: "operationnel" }
+      { label: "Dépannage reseau", level: "opérationnel" }
     ]
   },
   {
@@ -21,17 +21,17 @@ const skillGroups = [
       { label: "Linux", level: "moyen" },
       { label: "Comptes / droits", level: "bases" },
       { label: "Installation postes", level: "operationnel" },
-      { label: "Diagnostic (materiel/logiciel)", level: "moyen" }
+      { label: "Diagnostic (matériel/logiciel)", level: "moyen" }
     ]
   },
   {
     title: "Sauvegardes",
-    desc: "Protection des donnees et bonnes pratiques",
+    desc: "Protection des données et bonnes pratiques",
     tags: [
-      { label: "Strategies de sauvegarde", level: "moyen" },
+      { label: "Stratégies de sauvegarde", level: "moyen" },
       { label: "Rotation / conservation", level: "moyen" },
       { label: "Export / copie vers NAS", level: "moyen" },
-      { label: "Verification / tests", level: "operationnel" },
+      { label: "Vérifications / tests", level: "operationnel" },
       { label: "Sensibilisation", level: "operationnel" }
     ]
   },
@@ -44,26 +44,26 @@ const skillGroups = [
       "Relation client",
       "Rigueur",
       "Autonomie",
-      "Travail en equipe"
+      "Travail en équipe"
     ]
   },
   {
-    title: "Cybersecurite",
+    title: "Cybersécurite",
     desc: "Notions et sensibilisation",
     tags: [
       { label: "Bonnes pratiques", level: "moyen" },
       { label: "Principes ISO", level: "bases" },
       { label: "Risques", level: "moyen" },
-      { label: "Documentation procedures", level: "moyen" },
+      { label: "Documentation procédures", level: "moyen" },
       { label: "Sensibilisation", level: "moyen" }
     ]
   },
   {
     title: "Langues",
-    desc: "Langues utilisees dans un contexte professionnel",
+    desc: "Langues utilisées dans un contexte professionnel",
     tags: [
       { label: "Anglais (B1/B2)", level: "avance" },
-      { label: "Lecture / Redaction de procedures en anglais", level: "avance" }
+      { label: "Lecture / Rédaction de procédures en anglais", level: "avance" }
     ]
   }
 ];
@@ -253,3 +253,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", hideTip, true);
   window.addEventListener("resize", hideTip);
 });
+
