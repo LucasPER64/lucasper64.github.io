@@ -20,7 +20,7 @@ const skillGroups = [
       { label: "Windows Server", level: "moyen" },
       { label: "Linux", level: "moyen" },
       { label: "Comptes / droits", level: "bases" },
-      { label: "Installation poste", level: "expert" },
+      { label: "Installation postes", level: "opérationel" },
       { label: "Diagnostic (matériel/logiciel)", level: "moyen" }
     ]
   },
@@ -252,3 +252,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", hideTip, true);
   window.addEventListener("resize", hideTip);
 });
+
