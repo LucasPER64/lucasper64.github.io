@@ -128,7 +128,7 @@ function buildSkills() {
       return `
         <span class="tag level-${level}" data-skill="${data}" data-tooltip="${label}">
           <span class="tag-text">${label}</span>
-          <span class="tag-badge">${level === "avance" ? "Avance" : (level === "operationnel" ? "Operationnel" : level)}</span>
+          <span class="tag-badge">${level === "avance" ? "Avancé" : (level === "operationnel" ? "Opérationnel" : level)}</span>
         </span>
       `;
     }).join("");
@@ -253,4 +253,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", hideTip, true);
   window.addEventListener("resize", hideTip);
 });
+
 
